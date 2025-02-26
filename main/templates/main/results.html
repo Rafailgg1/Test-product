@@ -1,0 +1,34 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Результаты теста</title>
+    <link rel="stylesheet"  href="{% static 'stylesssss.css' %}">
+</head>
+{% load static %}
+<body>
+    <video autoplay muted loop id="background-video">
+        <source src="{% static 'main/img/video-bg.mp4' %}" type="video/mp4">
+        Ваш браузер не поддерживает видео.
+    </video>
+    <div class="container">
+        <h2>Результаты теста: {{ test_title }}</h2>
+
+        {% if result_image %}
+            <img src="{{ result_image }}" alt="Result Image" class="result-image">
+        {% else %}
+            <p>Изображение отсутствует.</p>
+        {% endif %}
+
+        <div class="result-block">
+            <p class="result-message">{{ result_message }}</p>  
+            <p class="result-score">Правильных ответов: {{ score }} из {{ total }}</p>
+            <a href="/" class="home-button">На главную</a>
+        </div>
+    </div>
+</body>
+</html>

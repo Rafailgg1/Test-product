@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Выбор тестов</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+{% block content %} 
+<div class="chat-container">
+    <h1>Чат для тестировщиков</h1>
+
+
+    <form method="post" class="chat-form">
+        {% csrf_token %}
+        {{ form.message }}
+        <button type="submit" class="send-button">Отправить</button>
+    </form>
+
+
+    <div class="messages-list">
+        {% for message in messages %}
+            <div class="message">
+                <strong>{{ message.user.username }}</strong>
+                <span class="timestamp">{{ message.timestamp }}</span>
+                <p>{{ message.message }}</p>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+<video class="intro__video" autoplay muted loop>
+    <source src="{% static 'main/img/video-bg.mp4' %}" type="video/mp4">
+</video>
+<div class="intro__content">
+</div>
+</div>
+{% endblock %}
+</body>
+</html>

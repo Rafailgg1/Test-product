@@ -1,0 +1,75 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    {% load static %}
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Тесты и Описания</title>
+        <link rel="stylesheet" href="static/stylesss.css">
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js"></script>
+    </head>
+    <body>
+        {% block content %} 
+        <a href="/" class="home-button">На главную</a>
+        <section class="video-section">
+            <video class="video-bg" autoplay muted loop>
+                <source src="{% static 'main/img/video-bg.mp4' %}" type="video/mp4">
+                Ваш браузер не поддерживает видео.
+            </video>
+            <div class="video-overlay">
+                <h1>Тесты и Описания</h1>
+                <p>Исследуйте возможности тестов.</p>
+                <button class="cta-button">Узнать больше</button>
+            </div>
+        </section>
+    
+        <section class="sticky-section section-1">
+            <div class="sticky-content">
+                <div class="text-content">
+                    <h2>Информация о тестах 1: Получение более широкого понимания себя</h2>
+                    <p>Можно раскрыть скрытые аспекты личности, понять причины реакций и поведения, найти решения для проблем или вызовов, с которыми человек сталкивается.</p>
+                    <button class="card-button">Подробнее</button>
+                </div>
+                <div class="image-content">
+                    <img src="{% static 'main/img/people.jpeg'  %}" alt="Тест на прочность">
+                </div>
+            </div>
+        </section>
+    
+        <section class="sticky-section section-2">
+            <div class="sticky-content">
+                <div class="text-content">
+                    <h2>Информация о тестах 2: Раскрытие содержания мыслей и представлений. </h2>
+                    <p>Это позволяет выявить скрытые тенденции и тренды в сознании.</p>
+                    <button class="card-button">Подробнее</button>
+                </div>
+                <div class="image-content">
+                    <img src="{% static 'main/img/time.jpg' %}" alt="Тест на скорость">
+                </div>
+            </div>
+        </section>
+    
+        <section class="sticky-section section-3">
+            <div class="sticky-content">
+                <div class="text-content">
+                    <h2>Информация о тестах 3:  ассоциативные тесты полезны в маркетинговых и рекламных исследованиях. </h2>
+                    <p>Они помогают изучить истинные приоритеты и предпочтения аудитории, а также решить различные задачи в сфере маркетинга и рекламы. </p>
+                    <button class="card-button">Подробнее</button>
+                </div>
+                <div class="image-content">
+                    <img src="{% static 'main/img/world.jpg' %}" alt="Тест на безопасность">
+                </div>
+            </div>
+        </section>
+    
+        <footer>
+            <p>&copy; 2025 Test. Все права защищены.</p>
+        </footer>
+    
+        <script src="static/scripts.js"></script>
+        {% endblock %}
+    </body>
+    </html>

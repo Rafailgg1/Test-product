@@ -1,0 +1,216 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;700;800;900&display=swap');
+@media (max-width: 768px) {
+    .options-grid {
+        grid-template-columns: repeat(2, 1fr); 
+    }
+}
+/* Видео на фон */
+#background-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Oswald', sans-serif;
+}
+
+
+.border-frame {
+    position: relative;
+    padding: 20px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: inline-block;
+    max-width: 100%; 
+    overflow: hidden;
+}
+
+.test-container {
+    position: relative;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center; 
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 450px;
+    width: 100%;
+    margin: 20px auto;
+    overflow: hidden;
+    min-height: 400px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); 
+}
+
+
+.question-image {
+    max-width: 100%; 
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    display: block; 
+    object-fit: contain;
+}
+
+
+.option {
+    display: block;
+    margin: 10px 0;
+    padding: 10px;
+    background: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.option:hover {
+    background-color: #e9ecef;
+}
+
+
+
+.next-button {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+
+.home-button {
+    display: inline-block;
+    background: #28a745;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.question-image {
+    max-width: 100%;  
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    border: 5px;
+}
+
+
+.result-image {
+    display: block; 
+    margin: 0 auto; 
+    max-width: 100%; 
+    height: auto;
+    border-radius: 10px;
+    border: 5px solid #007bff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+}
+
+.result-block {
+    background-color: rgba(255, 255, 255, 0.9);  
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; 
+    text-align: center; 
+    padding: 20px; 
+    max-width: 800px; 
+    margin: 0 auto; 
+}
+
+.result-message {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.result-score {
+    font-size: 1.1em;
+    color: #333;
+}
+
+.home-button {
+    display: inline-block;
+    background: #28a745;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-top: 20px;
+}
+.btn-create-test, .btn-delete-test, .btn-save-test, .btn-confirm-delete, .btn-cancel {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    margin: 5px;
+}
+
+.btn-create-test {
+    background-color: #007BFF;
+    color: white;
+}
+
+.btn-delete-test {
+    background-color: #dc3545;
+    color: white;
+}
+
+.btn-save-test {
+    background-color: #28a745;
+    color: white;
+}
+
+.btn-confirm-delete {
+    background-color: #dc3545;
+    color: white;
+}
+
+.btn-cancel {
+    background-color: #6c757d;
+    color: white;
+}
+
+/* Стили для контейнеров */
+.section-container, .create-test-container, .confirm-delete-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.test-list {
+    margin-top: 20px;
+}
+
+.test-item {
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    background: #f9f9f9;
+}

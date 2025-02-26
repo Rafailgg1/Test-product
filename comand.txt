@@ -1,0 +1,11 @@
+powershell(set-executionpolicy remotesigned)
+python -m venv venv
+pip install -r requirements.txt
+py -m pip install Django==5.1.6
+pip install --pre django       
+pip install djangorestframework
+pip install djangorestframework-simplejwt
+pip install python-dotenv
+python -m pip install Pillow 
+.\.venv\Scripts\activate
+python manage.py runserver     

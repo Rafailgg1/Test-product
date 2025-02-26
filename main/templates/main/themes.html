@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Выбор тестов</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+  
+{% block content %} 
+<div class="themes-container">
+    <h1>Темы</h1>
+
+    <div class="theme">
+        <h2>Тема 1: "В каком 10-и летии вам суждено быть"</h2>
+        <ul class="test-list">
+            <li><a href="{% url 'start_test' test_id=3 %}">Люди-субкультуры</a></li> 
+        </ul>
+    </div>
+
+
+    <div class="theme">
+        <h2>Тема 2: "Ваш взгляд на грядущие перемены в мире"</h2>
+        <ul class="test-list">
+            <li><a href="{% url 'start_test' test_id=5 %}">Мир-ваше виденье</a></li>
+          
+        </ul>
+    </div>
+
+    <div class="theme">
+        <h2>Тема 3: "Кем бы вы хотели себя видеть"</h2>
+        <ul class="test-list">
+            <li><a href="{% url 'start_test' test_id=7 %}">Всё что воображаймо</a></li>
+        </ul>
+    </div>
+</div>
+{% endblock %}
+<video class="intro__video" autoplay muted loop>
+    <source src="{% static 'main/img/video-bg.mp4' %}" type="video/mp4">
+</video>
+<div class="intro__content">
+</div>
+</div>
+</body>

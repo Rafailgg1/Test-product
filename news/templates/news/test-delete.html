@@ -1,0 +1,15 @@
+{% extends 'news/lay.html' %}
+
+{% block title %}Удаление Теста{% endblock %}
+
+{% block content %}
+    <div class="features">
+        <h1>Удаление Теста</h1>
+        <form method="post">
+            {% csrf_token %}
+            <button class="btn btn-success" type="submit">Удалить Тест</button>
+        </form> 
+    </div>
+{% endblock %}
+
+   

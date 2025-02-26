@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Список секций</title>
+    <link rel="stylesheet" href="{% static 'styless.css' %}">
+</head>
+<body>
+    <div class="intro">
+        <video class="intro__video" autoplay muted loop>
+            <source src="{% static 'main/img/video-bg.mp4' %}" type="video/mp4">
+            Ваш браузер не поддерживает видео.
+        </video>
+    </div>
+
+    <div class="sections-container">
+        {% for section in active_sections %}
+        <div class="section">
+            <img src="{{ section.image.url }}" alt="{{ section.title }}">
+            <h3>{{ section.title }}</h3>
+            <p>{{ section.description }}</p>
+            <a href="{% url 'section_detail' section.id %}">Пройти тест</a>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>

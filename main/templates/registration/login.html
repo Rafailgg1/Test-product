@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <title>Login</title>
+</head>
+<body>
+    <div class="wrapper">
+        <form method="post">
+            {% csrf_token %}
+            <h1>Login</h1>
+
+            {% if form.errors %}
+                <div class="alert alert-danger">
+                    Неправильное имя пользователя или пароль.
+                </div>
+            {% endif %}
+            <div class="input-box">
+                {{ form.username }}
+                <i class='bx bxs-user-detail'></i>
+            </div>
+            <div class="input-box">
+                {{ form.password }}
+                <i class='bx bxs-lock-open'></i>
+            </div>
+            <div class="remember-forgot">
+                <label>
+                    <input type="checkbox" name="remember_me"> Запомнить меня
+                </label>
+            </div>
+            <button type="submit" class="btn">Войти</button>
+            <div class="register-link">
+                <p>Забыли пароль? <a href="#">Восстановить</a></p>
+            </div>
+        </form>
+    </div>
+    <video class="intro__video" autoplay muted loop>
+        <source src="{% static 'main/img/video-bg.mp4' %}" type="video/mp4">
+    </video>
+</body>
+</html>

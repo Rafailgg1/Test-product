@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ test.title }}</title>
+    <link rel="stylesheet" href="{% static 'styless.css' %}">
+</head>
+<body>
+    <div class="intro">
+        <video class="intro__video" autoplay muted loop>
+            <source src="{% static 'main/img/video-bg.mp4' %}" type="video/mp4">
+            Ваш браузер не поддерживает видео.
+        </video>
+    </div>
+
+    <div class="test-container">
+        <h1>{{ test.title }}</h1>
+        <p>{{ test.description }}</p>
+
+        <!-- Кнопка "Перейти к прохождению" -->
+        {% if first_question %}
+            <a href="{% url 'question' test_id=test.id question_id=first_question.id %}" class="btn-start-test">
+                Перейти к прохождению
+            </a>
+        {% else %}
+            <p class="error-message">{{ error_message }}</p>
+        {% endif %}
+    </div>
+</body>
+</html>

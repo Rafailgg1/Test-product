@@ -1,0 +1,58 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Вопрос {{ question_number }}</title>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'stylesssss.css' %}">
+    <style>
+        /* Стили для контейнера с вопросом и ответами */
+        .test-container {
+            {% if test.background_image %}
+                background-image: url('{{ test.background_image.url }}');
+            {% else %}
+                background-color: rgba(255, 255, 255, 0.9); /* Фон по умолчанию */
+            {% endif %}
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            min-height: 400px; /* Минимальная высота контейнера */
+        }
+    </style>
+</head>
+<body>
+    <!-- Видео на фон -->
+    <video autoplay muted loop id="background-video">
+        <source src="{% static 'main/img/video-bg.mp4' %}" type="video/mp4">
+        Ваш браузер не поддерживает видео.
+    </video>
+
+    <!-- Контейнер с окантовкой -->
+    <div class="border-frame">
+        <div class="test-container">
+            <!-- Картинка вопроса -->
+            {% if question.image %}
+                <img src="{{ question.image.url }}" alt="Question Image" class="question-image">
+            {% else %}
+                <p>Изображение отсутствует.</p>
+            {% endif %}
+            <h2>{{ question.text }}</h2>
+            <form method="post" action="{% url 'question' test_id=test_id question_id=question.id %}">
+                {% csrf_token %}
+                {% for answer in question.answers.all %}
+                    <label class="option">
+                        <input type="radio" name="answer" value="{{ answer.id }}" required>
+                        {{ answer.text }}
+                    </label>
+                {% endfor %}
+                <button type="submit" class="next-button">Далее</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

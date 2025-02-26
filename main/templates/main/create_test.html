@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Результаты теста</title>
+    <link rel="stylesheet"  href="{% static 'stylesssss.css' %}">
+</head>
+{% load static %}
+<body>
+    {% block content %}
+<div class="create-test-container">
+    <h1>Создать новый тест</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn-save-test">Сохранить</button>
+    </form>
+</div>
+{% endblock %}
+<video class="intro__video" autoplay muted loop>
+    <source src="{% static 'main/img/video-bg.mp4' %}" type="video/mp4">
+</video>
+<div class="intro__content">
+</div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test</title>
+    <link rel="stylesheet"  href="{% static 'stylessss.css' %}">
+</head>
+<body>
+    <video autoplay muted loop id="background-video">
+        <source src="{% static 'main/img/video-bg.mp4' %}" type="video/mp4">
+        Ваш браузер не поддерживает видео.
+    </video>
+    <div class="border-frame">
+    <div class="test-container">
+        {% if test.image %}
+        <img src="{{ test.image.url }}" alt="Test Image" class="test-image">
+        {% endif %}
+        <h2>{{ test.question }}</h2>
+        <div class="options-grid">
+            <label class="option-item">
+                <input type="radio" name="answer" value="{{ test.option1 }}"> 
+                <span>{{ test.option1 }}</span>
+            </label>
+            <label class="option-item">
+                <input type="radio" name="answer" value="{{ test.option2 }}"> 
+                <span>{{ test.option2 }}</span>
+            </label>
+            <label class="option-item">
+                <input type="radio" name="answer" value="{{ test.option3 }}"> 
+                <span>{{ test.option3 }}</span>
+            </label>
+            <label class="option-item">
+                <input type="radio" name="answer" value="{{ test.option4 }}"> 
+                <span>{{ test.option4 }}</span>
+            </label>
+        </div>
+        <button type="submit">Ответить</button>
+    </div>
+</div>
+</body>
+</html>
